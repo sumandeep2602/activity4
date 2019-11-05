@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var sunriseLabel: UILabel!
     @IBOutlet weak var sunsetLabel: UILabel!
     
+    @IBOutlet weak var timeLabel: UILabel!
     
     @IBOutlet weak var savedCityLabel: UILabel!
     
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let URL2 = "https://api.sunrise-sunset.org/json?lat=49.2827&lng=-123.1207&date=today"
+        let URL2 = "https://api.darksky.net/forecast/252a5f0f6be2fab9856294c15e29987d/49.2827,-123.1207"
         let URL = "https://api.darksky.net/forecast/252a5f0f6be2fab9856294c15e29987d/49.2827,-123.1207"
         Alamofire.request(URL).responseJSON {
             // 1. store the data from the internet in the
@@ -43,7 +44,7 @@ class ViewController: UIViewController {
             // OUTPUT the entire json response to the terminal
             print(apiData)
             
-            
+           // let date = NSDate(timeInterval: <#T##TimeInterval#>, since: 97)
             // GET sunrise/sunset time out of the JSON response
             let jsonResponse = JSON(apiData)
             //let sunriseTime = jsonResponse["results"]["sunrise"].string
@@ -76,33 +77,32 @@ class ViewController: UIViewController {
             response in
             
             // 2. get the data out of the variable
-            guard let apiData = response.result.value else {
+            guard let apiData2 = response.result.value else {
                 print("Error getting data from the URL")
                 return
             }
             
             // OUTPUT the entire json response to the terminal
-            print(apiData)
+            print(apiData2)
             
             
             // GET sunrise/sunset time out of the JSON response
-            let jsonResponse = JSON(apiData)
+            let jsonResponse = JSON(apiData2)
             //let sunriseTime = jsonResponse["results"]["sunrise"].string
             //let sunsetTime = jsonResponse["results"]["sunset"].string
             
-            let sunriseTime = jsonResponse["currently"]["dewPoint"]
+            let sunriseTime = jsonResponse["currently"]["time"]
             //let sunsetTime = jsonResponse["results"]["sunset"].string
             //let sunsetTime = jsonResponse["list"][0]["main"]["temp_max"]
-            let sunsetTime = jsonResponse["currently"]["apparentTemperature"]
-            
+        
             
             // DEBUG:  Output it to the terminal
             print("Max: \(sunriseTime)")
-            print("Min: \(sunsetTime)")
+          
             
             // display in a UI
-            self.sunriseLabel.text = "\(sunriseTime)"
-            self.sunsetLabel.text = "\(sunsetTime)"
+            self.timeLabel.text = "\(sunriseTime)"
+          
         }
         
         

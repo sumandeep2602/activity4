@@ -108,7 +108,10 @@ class InterfaceController: WKInterfaceController {
             // stop the loading animation
             self.stopAnimations()
         }
+    
     }
+    
+    
    
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

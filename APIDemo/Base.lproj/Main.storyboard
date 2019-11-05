@@ -67,6 +67,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TIME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3s-t0-vuk">
+                                <rect key="frame" x="100" y="448" width="174" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -74,6 +81,7 @@
                         <outlet property="savedCityLabel" destination="Wd5-0o-KeC" id="t6Z-nO-Vsi"/>
                         <outlet property="sunriseLabel" destination="Tg0-7e-VcI" id="Chs-V7-AaT"/>
                         <outlet property="sunsetLabel" destination="hCi-FP-4LK" id="s5f-1I-gQg"/>
+                        <outlet property="timeLabel" destination="o3s-t0-vuk" id="B5Y-Qr-XDs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fy-MN-jtx" userLabel="First Responder" sceneMemberID="firstResponder"/>
