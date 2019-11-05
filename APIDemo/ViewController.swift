@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        //let URL = "https://api.sunrise-sunset.org/json?lat=49.2827&lng=-123.1207&date=today"
+        let URL2 = "https://api.sunrise-sunset.org/json?lat=49.2827&lng=-123.1207&date=today"
         let URL = "https://api.darksky.net/forecast/252a5f0f6be2fab9856294c15e29987d/49.2827,-123.1207"
         Alamofire.request(URL).responseJSON {
             // 1. store the data from the internet in the
@@ -64,6 +64,52 @@ class ViewController: UIViewController {
             self.sunsetLabel.text = "\(sunsetTime)"
         }
     
+        
+        
+        
+        
+        
+        
+        Alamofire.request(URL2).responseJSON {
+            // 1. store the data from the internet in the
+            // response variable
+            response in
+            
+            // 2. get the data out of the variable
+            guard let apiData = response.result.value else {
+                print("Error getting data from the URL")
+                return
+            }
+            
+            // OUTPUT the entire json response to the terminal
+            print(apiData)
+            
+            
+            // GET sunrise/sunset time out of the JSON response
+            let jsonResponse = JSON(apiData)
+            //let sunriseTime = jsonResponse["results"]["sunrise"].string
+            //let sunsetTime = jsonResponse["results"]["sunset"].string
+            
+            let sunriseTime = jsonResponse["currently"]["dewPoint"]
+            //let sunsetTime = jsonResponse["results"]["sunset"].string
+            //let sunsetTime = jsonResponse["list"][0]["main"]["temp_max"]
+            let sunsetTime = jsonResponse["currently"]["apparentTemperature"]
+            
+            
+            // DEBUG:  Output it to the terminal
+            print("Max: \(sunriseTime)")
+            print("Min: \(sunsetTime)")
+            
+            // display in a UI
+            self.sunriseLabel.text = "\(sunriseTime)"
+            self.sunsetLabel.text = "\(sunsetTime)"
+        }
+        
+        
+        
+        
+        
+        
         self.geocode(cityName: "Toronto")
     }
 

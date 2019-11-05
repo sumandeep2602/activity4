@@ -19,6 +19,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var sunsetLabel: WKInterfaceLabel!
     @IBOutlet var cityLabel: WKInterfaceLabel!
     
+    @IBOutlet var lblTime: WKInterfaceLabel!
     @IBOutlet var loadingSunriseImage: WKInterfaceImage!
     @IBOutlet var loadingSunsetImage: WKInterfaceImage!
     

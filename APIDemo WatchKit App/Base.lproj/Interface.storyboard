@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
     </dependencies>
     <scenes>
         <!--mainpage-->
@@ -14,7 +14,7 @@
             <objects>
                 <controller identifier="mainpage" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="APIDemo_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="Vancouver" id="x5x-MS-41c"/>
+                        <label width="74" height="14" alignment="center" text="Vancouver" id="x5x-MS-41c"/>
                         <separator width="50" alignment="center" id="BCC-Js-YdA">
                             <color key="color" red="0.38823530080000002" green="0.85490196939999996" blue="0.21960784489999999" alpha="1" colorSpace="deviceRGB"/>
                         </separator>
@@ -23,7 +23,7 @@
                                 <imageView width="32" height="32" alignment="left" verticalAlignment="center" image="gtrthrthht" id="eia-gT-ki3"/>
                                 <group width="1" alignment="left" layout="vertical" id="b0v-Ko-CSZ">
                                     <items>
-                                        <label alignment="left" verticalAlignment="center" text="Minimum Temperature" id="05p-Cf-yIn"/>
+                                        <label alignment="left" verticalAlignment="center" text="Min Temp" id="05p-Cf-yIn"/>
                                         <group width="1" alignment="left" verticalAlignment="bottom" id="Jf3-5q-P0k">
                                             <items>
                                                 <imageView width="16" height="16" alignment="left" verticalAlignment="center" id="paz-kg-oJ4"/>
@@ -40,7 +40,7 @@
                                 <imageView width="32" height="32" alignment="left" verticalAlignment="center" image="sun2" id="q07-S1-8Gf"/>
                                 <group width="1" alignment="left" layout="vertical" id="KhF-3g-fbe">
                                     <items>
-                                        <label alignment="left" verticalAlignment="center" text="Maximum Temperature" id="7SV-9T-4DI"/>
+                                        <label alignment="left" verticalAlignment="center" text="Max Temp" id="7SV-9T-4DI"/>
                                         <group width="1" alignment="left" verticalAlignment="bottom" id="r51-y5-Y6n">
                                             <items>
                                                 <imageView width="16" height="16" alignment="left" verticalAlignment="center" id="l29-la-ETP"/>
@@ -51,8 +51,9 @@
                                 </group>
                             </items>
                         </group>
+                        <label width="98" height="21" alignment="left" text="Time" id="nI7-JG-eyX"/>
                         <button alignment="center" verticalAlignment="bottom" id="Khu-Wt-J5j">
-                            <group key="contentGroup" height="30" alignment="left" spacing="5" id="SxN-iX-ypb">
+                            <group key="contentGroup" width="112" height="20" alignment="left" spacing="5" id="SxN-iX-ypb">
                                 <items>
                                     <imageView width="16" height="16" alignment="left" verticalAlignment="center" image="settings-light" id="OZy-wD-JTL"/>
                                     <label alignment="center" verticalAlignment="center" text="Change City" id="JTF-Ug-g6d">
@@ -70,6 +71,7 @@
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     <connections>
                         <outlet property="cityLabel" destination="x5x-MS-41c" id="X7N-GP-ccw"/>
+                        <outlet property="lblTime" destination="nI7-JG-eyX" id="S1Q-eU-Vgf"/>
                         <outlet property="loadingSunriseImage" destination="paz-kg-oJ4" id="aWC-xJ-h7P"/>
                         <outlet property="loadingSunsetImage" destination="l29-la-ETP" id="dSN-Ad-YuX"/>
                         <outlet property="sunriseLabel" destination="s03-St-nUs" id="daj-Hp-kPp"/>
@@ -77,7 +79,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="99"/>
+            <point key="canvasLocation" x="34" y="94.5"/>
         </scene>
         <!--City Settings Interface Controller-->
         <scene sceneID="w2X-0G-85q">
