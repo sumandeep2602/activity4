@@ -32,7 +32,7 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        // Configure interface objects here.n
     }
     
     override func willActivate() {
